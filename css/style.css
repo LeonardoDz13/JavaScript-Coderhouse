@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*Variables Globales*/
+:root{
+--color-fondo:#ffffff;
+--color-texto:#1a1a1a;
+--color-logo:#4169E1;
+--fuente-principal:'Nunito', sans-serif;
+}
+
+/* Estilo general para el body */
+body{
+    background-color: var(--color-fondo);
+    color:var(--color-texto);
+    font-family:var(--fuente-principal);
+    font-size: 1.1rem;
+    padding-top: 110px; /* Espacio para el header fijo */   
+}
+
+main.container,div.container{
+    margin-top:2rem !important; /
+}
+
+/* Estilo para el header */
+#fondoHeader {
+    background-color: var(--color-logo);
+    transition: background-color 0.5s ease;    
+}
+
+.navbar {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    min-height: 80px; 
+}
+
+/*forzar el centrado del contenido del navbar*/
+.navbar .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between;
+    
+}
+
+/* asegurar que los elementos del navbar estén centrados verticalmente */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+/*Tamaño logo*/
+.logo-nav {
+    width: auto;
+    height: 75px;
+    transition: transform 0.3s ease ;
+}
+
+/* Efecto hover para el logo */
+.logo-nav:hover {
+    transform: scale(1.05);
+}
+
+
+/* Efecto hover para el header */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffde59;
+   transition: all 0.3s ease;
+
+}
+.container {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+}
+
+/* Estilos de la sección de productor */
+
+.card-sticker {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}   
+
+.card-sticker:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)!important;
+}
+
+/* Animaciones y efectos movimiento sticker principal */
+.floating-sticker{
+    filter: drop-shadow(10px 10px 15px rgba(0,0,0,0.15));
+    
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform: translateY(0px);}
+    50% {transform: translateY(-20px);}
+    100% {transform: translateY(0px); }
+}
+.tipografiaNunito {
+    font-family: "Nunito", sans-serif;
+}
