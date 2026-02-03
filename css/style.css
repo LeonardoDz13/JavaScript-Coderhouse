@@ -14,11 +14,12 @@ body{
     color:var(--color-texto);
     font-family:var(--fuente-principal);
     font-size: 1.1rem;
-    padding-top: 110px; /* Espacio para el header fijo */   
+    padding-top: 0px; 
 }
 
-main.container,div.container{
-    margin-top:2rem !important; /
+main.container,.container{
+    margin-top: 140px !important; 
+    padding-top:0 !important;
 }
 
 /* Estilo para el header */
