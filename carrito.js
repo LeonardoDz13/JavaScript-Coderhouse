@@ -4,7 +4,8 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 // Esta función se encarga de crear el HTML para que el usuario vea sus productos
 const mostrarCarrito = () => {
     const contenedor = document.getElementById("lista-carrito");
-    const totalElemento = document.getElementById("total-compra");
+    const totalElemento = document.getElementById("total-compra"); // Este es el Subtotal
+    const totalFinalElemento = document.getElementById("total-final"); // Este es el Total de abajo
     
     if (!contenedor) return;
 
@@ -15,6 +16,7 @@ const mostrarCarrito = () => {
     if (carrito.length === 0) {
         contenedor.innerHTML = "<p class='text-center py-5'>Tu carrito está vacío.</p>";
         if(totalElemento) totalElemento.innerText = "0";
+        if(totalFinalElemento) totalFinalElemento.innerText = "0";
         return;
     }
 
@@ -42,12 +44,14 @@ const mostrarCarrito = () => {
 
     // Sumo todos los precios para sacar el total final
     const total = carrito.reduce((acc, el) => acc + el.precio, 0);
+    
+    // Actualizo los números en la pantalla (Subtotal y Total)
     if(totalElemento) totalElemento.innerText = total;
+    if(totalFinalElemento) totalFinalElemento.innerText = total; 
 };
 
 // Función para eliminar un producto del carrito por su índice
 window.eliminarDelCarrito = (index) => {
-   
     carrito.splice(index, 1);
     
     // Guardo el cambio en el localStorage para que no vuelva a aparecer
@@ -63,17 +67,11 @@ mostrarCarrito();
 // Capturo el botón de finalizar para darle funcionalidad
 const btnFinalizar = document.getElementById("btn-finalizar");
 
-// Me aseguro de que el botón exista en la página antes de asignarle el evento
 if (btnFinalizar) {
     btnFinalizar.addEventListener("click", () => {
         
-        // Solo proceso la compra si el carrito tiene algún sticker
         if (carrito.length > 0) {
-            
-            // Vacío mi array porque la compra ya se hizo
             carrito = [];
-            
-            // Borro el carrito del Storage para que al recargar la web aparezca vacío
             localStorage.removeItem("carrito");
 
             // Confirmación visual de la compra exitosa
@@ -86,17 +84,16 @@ if (btnFinalizar) {
                 </div>
             `;
 
-            // Reset del total a 0
-            const totalElemento = document.getElementById("total-compra");
+            // Reset de los totales a 0
             if(totalElemento) totalElemento.innerText = "0";
+            const totalFinalElemento = document.getElementById("total-final");
+            if(totalFinalElemento) totalFinalElemento.innerText = "0";
 
-            // Actualización del contador del carrito en el menú
             if (typeof actualizarContador === 'function') {
                 actualizarContador();
             }
 
         } else {
-            // Si intenta finalizar sin productos, aviso por consola
             console.log("No hay nada para comprar todavía");
         }
     });
