@@ -74,6 +74,14 @@ main.container,.container{
     padding-bottom: 2rem;
 }
 
+#contador-carrito {
+    background-color: #ff4d4d; /* Un rojo más vibrante */
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25em 0.6em;
+    margin-left: 5px;
+}
+
 /* Estilos de la sección de productor */
 
 .card-sticker {

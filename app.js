@@ -12,7 +12,12 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const actualizarContador = () => {
     const contador = document.getElementById("contador-carrito");
     if (contador) {
+
+      //Mostrar cantidad de productos 
         contador.innerText = `(${carrito.length})`;
+
+        // si el carrito esta vacio se oculta el circulo rojo.
+        contador.style.display = carrito.length === 0 ? "none" : "inline-block";
     }
 };
 
