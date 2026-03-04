@@ -1,0 +1,15 @@
+[
+  { "id": 1,  "nombre": "BASKET",           "precio": 1500, "categoria": "deportes",    "img": "./assets/imagenes/basket_mano_+_pelota-removebg-preview.png" },
+  { "id": 2,  "nombre": "PATITO GUERRERO",  "precio": 1200, "categoria": "animales",    "img": "./assets/imagenes/patito_cuchillo-removebg-preview.png" },
+  { "id": 3,  "nombre": "MODO CHILL",       "precio": 1300, "categoria": "animales",    "img": "./assets/imagenes/Chill_de_cojones-removebg-preview.png" },
+  { "id": 4,  "nombre": "DONATELLO",        "precio": 1500, "categoria": "anime",       "img": "./assets/imagenes/tortuga-ninja.png" },
+  { "id": 5,  "nombre": "GATOMON",          "precio": 1400, "categoria": "anime",       "img": "./assets/imagenes/digimon1.png" },
+  { "id": 6,  "nombre": "CHICAGO BULLS",    "precio": 1600, "categoria": "deportes",    "img": "./assets/imagenes/chicago-bulls.png" },
+  { "id": 7,  "nombre": "BUHO ARTE",        "precio": 1500, "categoria": "arte",        "img": "./assets/imagenes/buho-arte.png" },
+  { "id": 8,  "nombre": "CUPHEAD",          "precio": 1700, "categoria": "videojuegos", "img": "./assets/imagenes/cuphead.png" },
+  { "id": 9,  "nombre": "DOGE CABEZA",      "precio": 1300, "categoria": "animales",    "img": "./assets/imagenes/doge-cabeza.png" },
+  { "id": 10, "nombre": "GOKU",             "precio": 4300, "categoria": "anime",       "img": "./assets/imagenes/goku.png" },
+  { "id": 11, "nombre": "HARRY POTTER",     "precio": 1200, "categoria": "arte",        "img": "./assets/imagenes/hp.png" },
+  { "id": 12, "nombre": "MARIO",            "precio": 1600, "categoria": "videojuegos", "img": "./assets/imagenes/mario.png" },
+  { "id": 13, "nombre": "NOCHE ESTRELLADA", "precio": 1800, "categoria": "arte",        "img": "./assets/imagenes/noche_estrellada-removebg-preview.png" }
+]
