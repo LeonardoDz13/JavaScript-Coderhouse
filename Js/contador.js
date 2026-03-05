@@ -1,7 +1,7 @@
 const actualizarContador = () => {
 
     // Busco el elemento del contador en el DOM (badge)
-    const badge = document.getElementById('contadorCarrito');
+    const badge = document.getElementById('contador-carrito');
 
     // Traigo el carrito del storage y lo parseo, si no hay nada en el storage, creo un array vacio
     const carritoEnStorage = JSON.parse(localStorage.getItem('carritoStickers')) || [];
