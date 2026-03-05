@@ -1,6 +1,9 @@
 // Traigo los stickers que se guardaron en el storage, si no hay nada arranca con el arrays vacio
 let carrito = JSON.parse(localStorage.getItem('carritoStickers')) || [];
 
+// capturamos el boton de finalizar compra para agregarle el evento de click y mostrar la alerta de confirmacion de compra con sweetalert2
+const btnFinalizar = document.getElementById("finalizar-compra");
+
 // Funcion para guardar el carrito en el storage cada vez que se agrega un sticker al carrito
 const guardarCarrito = () => {
     localStorage.setItem('carritoStickers', JSON.stringify(carrito));
@@ -26,9 +29,10 @@ const mostrarCarrito = () => {
             </div>`;
         if (totalElemento) totalElemento.innerText = "$0";
         if (totalFinalElemento) totalFinalElemento.innerText = "$0";
+        // Actualizamos el contador aunque esté vacío
+        if (typeof actualizarContador === 'function') actualizarContador();
         return;
     }
-
     // Recorro el carrito y creo un div por cada sticker, mostrando su imagen, nombre, cantidad y precio total 
     carrito.forEach((prod) => {
         const div = document.createElement("div");
@@ -67,7 +71,7 @@ const mostrarCarrito = () => {
 
     if(btnFinalizar) {
         btnFinalizar.addEventListener('click', () => {
-            if (carrito.length === 0) { 
+            if (carrito.length > 0) { 
                 // Alerta confirmar pedido
                Swal.fire({
                 title: '¿Confirmar pedido?',
