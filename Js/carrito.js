@@ -1,13 +1,13 @@
 // Trae la lista de stickers que se guardo antes en el storage , si no hay nada inicia vacio.
-export let carrito = JSON.parse(localStorage.getItem('carritoStickers')) || [];
+let carrito = JSON.parse(localStorage.getItem('carritoStickers')) || [];
 
 // Guarda el carrito en el storage convirtiendo el array a texto con JSON.stringify
-export const guardarCarrito = () => {
+   const guardarCarrito = () => {
     localStorage.setItem('carritoStickers', JSON.stringify(carrito));
 }
 
 // Actualiza el contador rojo del navbar con la cantidad de productos
-export const actualizarContador = () => {
+    const actualizarContador = () => {
     const badge = document.getElementById('contador-carrito');
     if (!badge) return;
 
@@ -21,7 +21,7 @@ export const actualizarContador = () => {
 };
 
 //Agrega un producto al carrito o incrementa su cantidad si ya existe
-export const agregarAlCarrito = (producto) => {
+    const agregarAlCarrito = (producto) => {
 
     // Busca si el producto ya está en el carrito por su id 
     const existente = carrito.find(item => item.id === producto.id);
@@ -35,7 +35,7 @@ export const agregarAlCarrito = (producto) => {
     }
 
     guardarCarrito();
-    actualizarContadorNav();
+    actualizarContador();
 };
 
 
