@@ -85,7 +85,7 @@ const modificarCantidad = (id, operacion) => {
         } else if (operacion === 'quitar') {
             carrito[index].cantidad -= cantidadElegida;
             lanzarToast(`Quitaste ${cantidadElegida} unidades`, "#dc3545");
-            
+
             if (carrito[index].cantidad <= 0) {
                 carrito.splice(index, 1);
             }
@@ -99,11 +99,11 @@ const modificarCantidad = (id, operacion) => {
 const lanzarToast = (mensaje, color) => {
 
     // Busca todos los carteles que estan visibles actualemente 
-    const toastVisibles = document.querySelectorAll (".toastify.on");
+    const toastVisibles = document.querySelectorAll(".toastify.on");
 
     // Si hay 3 o mas , elimina el mas viejo
-    if (toastVisibles.length >=3) {
-        
+    if (toastVisibles.length >= 3) {
+
         toastVisibles[0].remove();
 
     }
@@ -115,10 +115,10 @@ const lanzarToast = (mensaje, color) => {
         position: "center",
         stopOnFocus: true,
         style: {
-             background: color ,
-             borderRadius: "15px",
-             fontWeight:"bold" , 
-             fontSize: "18px",
+            background: color,
+            borderRadius: "15px",
+            fontWeight: "bold",
+            fontSize: "18px",
         }
     }).showToast();
 };
@@ -127,7 +127,6 @@ const lanzarToast = (mensaje, color) => {
 if (btnFinalizar) {
     btnFinalizar.addEventListener('click', () => {
         if (carrito.length > 0) {
-            // Alerta confirmar pedido
             Swal.fire({
                 title: '¿Confirmar pedido?',
                 text: `El total es de $${carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0)}`,
@@ -139,16 +138,20 @@ if (btnFinalizar) {
                 cancelButtonText: 'Seguir mirando'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Si confirma la compra, limpio el carrito y el storage
                     carrito = [];
                     guardarCarrito();
                     mostrarCarrito();
 
-                    Swal.fire(
-                        '¡Listo!',
-                        'Tu pedido fue recibido con éxito.',
-                        'success'
-                    );
+                    // Segundo Swal corregido:
+                    Swal.fire({
+                        title: '¡Listo!',
+                        text: 'Tu pedido fue recibido con éxito. Serás redirigido al inicio.',
+                        icon: 'success',
+                        confirmButtonText: 'Genial',
+                        confirmButtonColor: '#4169E1'
+                    }).then(() => {
+                        window.location.href = "../index.html";
+                    });
                 }
             });
         }
