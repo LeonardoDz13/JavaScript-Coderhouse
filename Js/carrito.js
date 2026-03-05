@@ -58,22 +58,26 @@ const mostrarCarrito = () => {
     
     // reduce para calcular el total de la compra, multiplicando el precio por la cantidad de cada sticker y sumando todo
     const total = carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0);
+    if(totalElemento) totalElemento.innerText = `$${total}`;
+    if (totalFinalElemento) totalFinalElemento.innerText = `$${total}`;
 
-    // Para borrar un sticker utilizando el ID
-    window.eliminarDelCarrito = (id) => {
-        carrito = carrito.filter((prod) => prod.id !== id); //Filtro el array para dejar afuera que el usuario borro 
-        // Guardo el nuevo carrito y vuelvo a mostrar
-        guardarCarrito();
-        mostrarCarrito();
-    };
     // Actualiza contador de stickers en el carrito
     if (typeof actualizarContador === 'function') actualizarContador();
+};
 
-    if(btnFinalizar) {
-        btnFinalizar.addEventListener('click', () => {
-            if (carrito.length > 0) { 
-                // Alerta confirmar pedido
-               Swal.fire({
+// Para borrar un sticker utilizando el ID
+window.eliminarDelCarrito = (id) => {
+    carrito = carrito.filter((prod) => prod.id !== id); //Filtro el array para dejar afuera que el usuario borro 
+    // Guardo el nuevo carrito y vuelvo a mostrar
+    guardarCarrito();
+    mostrarCarrito();
+};
+
+if(btnFinalizar) {
+    btnFinalizar.addEventListener('click', () => {
+        if (carrito.length > 0) { 
+            // Alerta confirmar pedido
+            Swal.fire({
                 title: '¿Confirmar pedido?',
                 text: `El total es de $${carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0)}`,
                 icon: 'question',
