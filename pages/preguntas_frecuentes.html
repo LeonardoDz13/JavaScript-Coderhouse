@@ -1,107 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <link rel="stylesheet" href="../css/style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <header id="fondoHeader">
-       <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-        <div class="container-fluid px-4">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="../assets/imagenes/Logo_LD.png" alt="Logo sticker" class="logo-nav">
-                
-            </a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="../assets/imagenes/Logo_LD.png" alt="Logo sticker" class="logo-nav">
 
-           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
-                <span class="navbar-toggler-icon"></span> 
-           </button>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
-           
+
                     <ul class="navbar-nav mx-auto">
-                            <li class="nav-item"><a class="nav-link " href="../index.html">INICIO</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../pages/stickers.html">STICKERS</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../pages/categorias.html">CATEGORIAS</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="#">FAQ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../pages/carrito.html">CARRITO</a></li> 
+                        <li class="nav-item"><a class="nav-link " href="../index.html">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/stickers.html">STICKERS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/categorias.html">CATEGORIAS</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">FAQ</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="carrito.html">
+                                <i class="bi bi-cart4"></i> <span id="contador-carrito">0</span> </a>
+                        </li>
                     </ul>
                 </div>
-        </div>
-    </nav>
+            </div>
+        </nav>
     </header>
 
-   <main class="container my-5 flex-grow-1">
-    <h1 class="text-center fw-bold mb-5">PREGUNTAS <span class="text-primary">FRECUENTES</span></h1>
-    
-    <div class="accordion shadow-sm" id="accordionFAQ">
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                    ¿Hacen envíos a todo el país?
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                <div class="accordion-body">
-                    <strong>¡Sí!</strong> Realizamos envíos a través de correo privado a todas las provincias de Argentina. El tiempo estimado es de 3 a 7 días hábiles.
+    <main class="container my-5 flex-grow-1">
+        <h1 class="text-center fw-bold mb-5">PREGUNTAS <span class="text-primary">FRECUENTES</span></h1>
+
+        <div class="accordion shadow-sm" id="accordionFAQ">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne">
+                        ¿Hacen envíos a todo el país?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        <strong>¡Sí!</strong> Realizamos envíos a través de correo privado a todas las provincias de
+                        Argentina. El tiempo estimado es de 3 a 7 días hábiles.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                    ¿De qué material son los stickers?
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                <div class="accordion-body">
-                    Nuestros stickers están impresos en <strong>vinilo de alta resistencia</strong> con acabado laminado, lo que los hace resistentes al agua, al sol y a los rayones. ¡Ideales para termos y notebooks!
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo">
+                        ¿De qué material son los stickers?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        Nuestros stickers están impresos en <strong>vinilo de alta resistencia</strong> con acabado
+                        laminado, lo que los hace resistentes al agua, al sol y a los rayones. ¡Ideales para termos y
+                        notebooks!
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                    ¿Qué métodos de pago aceptan?
-                </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-               <div class="accordion-body">
-    <p>Ofrecemos múltiples opciones para que elijas la que mejor te quede:</p>
-    <ul class="list-unstyled">
-        <li><i class="bi bi-credit-card"></i> 💳 <strong>Tarjetas:</strong> Débito y Crédito (todas las promociones bancarias disponibles).</li>
-        <li><i class="bi bi-bank"></i> 🏦 <strong>Transferencia:</strong> Consultanos por el descuento especial.</li>
-        <li><i class="bi bi-cash"></i> 💵 <strong>Efectivo:</strong> Al momento de retirar tu pedido.</li>
-    </ul>
-</div>
-        </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree">
+                        ¿Qué métodos de pago aceptan?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        <p>Ofrecemos múltiples opciones para que elijas la que mejor te quede:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-credit-card"></i> <strong>Tarjetas:</strong> Débito y Crédito (todas
+                                las promociones bancarias disponibles).</li>
+                            <li><i class="bi bi-bank"></i>  <strong>Transferencia:</strong> Consultanos por el
+                                descuento especial.</li>
+                            <li><i class="bi bi-cash"></i> <strong>Efectivo:</strong> Al momento de retirar tu
+                                pedido.</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                    ¿Hacen diseños personalizados?
-                </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                <div class="accordion-body">
-                    ¡Por supuesto! Podés enviarnos tu logo o diseño por WhatsApp o Instagram y nosotros lo convertimos en sticker. El pedido mínimo para personalizados es de 10 unidades.
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour">
+                            ¿Hacen diseños personalizados?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            ¡Por supuesto! Podés enviarnos tu logo o diseño por WhatsApp o Instagram y nosotros lo
+                            convertimos en sticker. El pedido mínimo para personalizados es de 10 unidades.
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</main>
+    </main>
     <footer class="bg-dark text-white text-center py-4">
         <p class="mb-0"> &copy; 2026 Leonardo Diaz - Coderhouse</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 </body>
+
 </html>
