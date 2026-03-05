@@ -4,6 +4,12 @@ const contenedorProductos = document.getElementById("contenedor-stickers");
 // Cargo el carrito desde el localStorage o creo un nuevo array si no existe 
 let carrito = JSON.parse(localStorage.getItem('carritoStickers')) || [];
 
+// Capturamos los parámetros de la URL para permitir el filtrado dinámico de productos
+const queryParams = new URLSearchParams(window.location.search);
+// Esto permite que al venir de categorias.html, el catálogo sepa qué sección mostrar.
+const categoriaURL = queryParams.get('categoria');
+
+
 // Funcion para traer los datos del JSON 
 const pedirProductos = async () => {
     const rutas =[
@@ -17,8 +23,20 @@ const pedirProductos = async () => {
             const response = await fetch(ruta);
             if (response.ok) {
                 const data = await response.json();
-                mostrarProductos(data);
-                return; 
+
+                if(categoriaURL){
+                    // Filtra los productos comparando con la URL
+                    const productosFiltrados = data.filter(
+
+                        (sticker) => sticker.categoria.toLowerCase() === categoriaURL.toLowerCase()
+                    );
+                    mostrarProductos (productosFiltrados);
+                } else {
+                    // Si no hay categoría en la URL, mostramos todo como antes
+                        mostrarProductos(data);
+                        
+                }
+                return;
             }
         } catch (err) {
             console.warn(`No encontrado en: ${ruta}`);
