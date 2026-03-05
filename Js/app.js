@@ -8,7 +8,7 @@ let carrito = JSON.parse(localStorage.getItem('carritoStickers')) || [];
 const pedirProductos = async () => {
     const rutas =[
 
-        '../data/producos.json',
+        '../data/productos.json',
         '/JavaScript-Coderhouse/Data/productos.json'
     ];
 
